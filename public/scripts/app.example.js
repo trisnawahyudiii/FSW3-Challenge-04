@@ -1,38 +1,61 @@
 class App {
     constructor() {
-        console.log('App example js: constructor');
         this.clearButton = document.getElementById('clear-btn');
         this.loadButton = document.getElementById('load-btn');
         this.carContainerElement = document.getElementById('cars-container');
     }
 
     async init() {
-        console.log('App example js: init');
         await this.load();
 
         // Register click listener
-        this.clearButton.onclick = this.clear;
+        // this.clearButton.onclick = this.clear;
         this.loadButton.onclick = this.run;
     }
 
     run = () => {
-        console.log('App example js: run');
-        Car.list.forEach((car) => {
+        this.clear();
+        const data = this.filterCar();
+
+        if (data.length == 0 || data == undefined) {
             const node = document.createElement('div');
-            node.innerHTML = car.render();
+            node.innerHTML = '<h1> No Car Available </h1>';
             this.carContainerElement.appendChild(node);
-        });
+        } else {
+            data.forEach((car) => {
+                const node = document.createElement('div');
+                node.innerHTML = car.render();
+                this.carContainerElement.appendChild(node);
+            });
+        }
     };
 
+    filterCar() {
+        const driver = document.getElementById('driver').value;
+        const passanger = document.getElementById('passanger').value;
+
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const dateTime = new Date(`${date} ${time}`);
+
+        if (dateTime == 'Invalid Date') {
+            alert('Please select date and time greater than now!');
+            return;
+        } else if (passanger <= 0) {
+            alert('Invalid passanger amount!');
+            return;
+        } else {
+            return Car.list.filter((car) => car.capacity >= passanger && car.availableAt <= dateTime);
+        }
+    }
+
     async load() {
-        console.log('App example js: load');
         const cars = await Binar.listCars();
         Car.init(cars);
         // console.log(cars);
     }
 
     clear = () => {
-        console.log('App example js: clear');
         let child = this.carContainerElement.firstElementChild;
 
         while (child) {
@@ -40,4 +63,16 @@ class App {
             child = this.carContainerElement.firstElementChild;
         }
     };
+}
+
+function rupiah(number) {
+    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(number);
+}
+
+function getDateTimeNow() {
+    var today = new Date();
+    var date = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+    var time = String(today.getHours()).padStart(2, '0') + ':' + String(today.getMinutes()).padStart(2, '0') + ':' + String(today.getSeconds()).padStart(2, '0');
+    var dateNow = date + 'T' + time + '.000Z';
+    return dateNow;
 }

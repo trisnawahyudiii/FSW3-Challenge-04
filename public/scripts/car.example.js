@@ -2,12 +2,10 @@ class Car {
     static list = [];
 
     static init(cars) {
-        console.log('Car example js: init');
         this.list = cars.map((i) => new this(i));
     }
 
     constructor({ id, plate, manufacture, model, image, rentPerDay, capacity, description, transmission, available, type, year, options, specs, availableAt }) {
-        console.log('Car example js: constructor');
         this.id = id;
         this.plate = plate;
         this.manufacture = manufacture;
@@ -26,13 +24,24 @@ class Car {
     }
 
     render() {
+        const rentCost = rupiah(this.rentPerDay);
         return `
-        <p>id: <b>${this.id}</b></p>
-        <p>plate: <b>${this.plate}</b></p>
-        <p>manufacture: <b>${this.manufacture}</b></p>
-        <p>model: <b>${this.model}</b></p>
-        <p>available at: <b>${this.availableAt}</b></p>
-        <img src="${this.image}" alt="${this.manufacture}" width="64px">
+
+            <div class="col m-2">
+                <div class="card" style="width: 18rem; height: 550px">
+                <img src="${this.image}"" class="thisd-img-top img-fluid" alt="${this.manufacture}" style="height: 190px; object-fit: scale-down;">
+                <div class="thisd-body" style="font-size: 14px;">
+                    <p class="thisd-title">${this.manufacture} ${this.model}</p>
+                    <p class="fw-bold">${rentCost} / hari</p>
+                    <p class="thisd-text" style="height: 90px">${this.description}</p>
+                    <div class="my-2"><i class="bi bi-people me-2"></i>${this.capacity} Orang</div>
+                    <div class="my-2"><i class="bi bi-gear me-2"></i>${this.transmission}</div>
+                    <div class="my-2"><i class="bi bi-calendar4 me-2"></i>${this.year}</div>
+                    <a href="#" class="btn bg-button text-white w-100 mt-2 fw-bold mt-4" style="font-size: 14px;">Pilih Mobil</a>
+                </div>
+                </div>
+            </div>
         `;
     }
 }
+

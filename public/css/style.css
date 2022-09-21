@@ -248,6 +248,17 @@ p {
     transform: rotate(180deg);
 }
 
+.cars-box-search {
+    width: 80%;
+    margin-top: -55px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 3px 2px #ebebeb;
+    font-size: 12px;
+    background-color: white;
+    z-index: 1;
+    position: relative;
+}
+
 @media screen and (max-width: 768px) {
     .navbar-collapse {
         align-items: flex-start;
@@ -302,6 +313,11 @@ p {
     .accordion {
         max-width: 100%;
         width: 100%;
+    }
+
+    .cars-box-search {
+        width: 100%;
+        margin-top: 50px;
     }
 }
 

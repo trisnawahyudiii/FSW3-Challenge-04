@@ -70,9 +70,44 @@
         </section>
         <!-- hero section -->
 
+        <!-- 
         <button id="load-btn">Load</button>
         <button id="clear-btn">Clear</button>
-        <div id="cars-container"></div>
+        <div id="cars-container"></div> -->
+
+        <!-- Search Car -->
+        <section class="container">
+            <div class="cars-box-search p-4 row row-cols-xl-auto mx-auto mb-4">
+                <div class="col-xxl p-2 mx-auto inputDriver">
+                    <label class="pb-2">Tipe Driver</label>
+                    <select class="form-select" id="driver" required>
+                        <option value="" hidden>Pilih Tipe Driver</option>
+                        <option value="true">Dengan Supir</option>
+                        <option value="false">Tanpa Supir(Lepas Kunci)</option>
+                    </select>
+                </div>
+                <div class="col-xxl p-2 mx-auto inputDate">
+                    <label class="pb-2">Tanggal</label>
+                    <input type="date" id="date" class="form-control" required />
+                </div>
+                <div class="col-xxl p-2 mx-auto inputTime">
+                    <label class="pb-2">Waktu Jemput/Ambil</label>
+                    <input type="time" name="form-select" id="time" required />
+                </div>
+                <div class="col-xxl p-2 mx-auto inputPassanger" style="min-width: 200px">
+                    <label class="pb-2">Jumlah Penumpang</label>
+                    <input type="number" class="form-control" id="passanger" placeholder="Jumlah Penumpang" />
+                </div>
+                <div class="col-xl p-2" style="display: inline-block; align-self: flex-end; height: 100%">
+                    <button class="btn btn-success" type="button" id="load-btn">Cari Mobil</button>
+                </div>
+            </div>
+
+            <!-- Daftar Mobil Tersedia -->
+            <div class="row row-cols-auto justify-content-center" id="cars-container">
+                <!-- Data JSON -->
+            </div>
+        </section>
 
         <footer>
             <div class="container-md d-flex flex-column flex-lg-row justify-content-between mt-5 mb-3 footer-container">

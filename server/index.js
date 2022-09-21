@@ -21,7 +21,6 @@ function getJS(jsFileName) {
 }
 
 function getImage(imageFileName) {
-    console.log(imageFileName);
     const imageFilePath = path.join(PUBLIC_DIRECTORY, imageFileName);
     return fs.readFileSync(imageFilePath);
 }
@@ -56,19 +55,19 @@ function onRequest(req, res) {
             return;
 
         case CSS:
-            console.log('masuk css!');
+            // console.log('masuk css!');
             res.writeHead(200, { 'Content-Type': 'text/css' });
             res.end(getCSS(CSS));
             return;
 
         case JS:
-            console.log('masuk js!');
+            // console.log('masuk js!');
             res.writeHead(200, { 'Content-Type': 'application/javascript' });
             res.end(getJS(JS));
             return;
 
         case IMG:
-            console.log('masuk image!');
+            // console.log('masuk image!');
             res.writeHead(200, { 'Content-Type': 'image' });
             res.end(getImage(IMG));
             return;
@@ -82,6 +81,6 @@ function onRequest(req, res) {
 
 const server = http.createServer(onRequest);
 
-server.listen(PORT, '127.0.0.2', () => {
-    console.log('server sudah berjalan, silahkan buka http://127.0.0.2:%d', PORT);
+server.listen(PORT, '0.0.0.0', () => {
+    console.log('server sudah berjalan, silahkan buka http://localhost:%d', PORT);
 });

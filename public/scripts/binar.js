@@ -6,7 +6,6 @@ function getRandomInt(min, max) {
 
 class Binar {
     static populateCars = (cars) => {
-        console.log('Binar.js: populateCars');
         return cars.map((car) => {
             const isPositive = getRandomInt(0, 1) === 1;
             const timeAt = new Date();
@@ -21,7 +20,6 @@ class Binar {
     };
 
     static async listCars(filterer) {
-        console.log('Binar.js: async listCars ');
         let cars;
         let cachedCarsString = localStorage.getItem('CARS');
 
