@@ -16,6 +16,4 @@ console.log(params);
 console.log('main example js! : app new App()');
 const app = new App();
 
-console.log('main example js! : app init then run');
-app.init().then(app.run);
-console.log('main example js! : app init then run done!');
+app.init().then(console.log('App initialized Successfully!'));

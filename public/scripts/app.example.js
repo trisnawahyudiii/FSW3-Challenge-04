@@ -31,7 +31,6 @@ class App {
     };
 
     filterCar() {
-        const driver = document.getElementById('driver').value;
         const passanger = document.getElementById('passanger').value;
 
         const date = document.getElementById('date').value;
@@ -52,7 +51,6 @@ class App {
     async load() {
         const cars = await Binar.listCars();
         Car.init(cars);
-        // console.log(cars);
     }
 
     clear = () => {
