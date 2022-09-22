@@ -77,9 +77,9 @@
         <div id="cars-container"></div> -->
 
         <!-- Search Car -->
-        <section class="container">
-            <div class="cars-box-search p-4 row row-cols-xl-auto mx-auto mb-4">
-                <div class="col-xxl p-2 mx-auto inputDriver">
+        <section class="container-xxl">
+            <div class="cars-box-search p-4 row row-cols-xl-auto mx-auto mb-4 justify-content-around">
+                <div class="col-lg col-md-6 col-sm-6 col-xs-12 p-2 inputDriver">
                     <label class="pb-2">Tipe Driver</label>
                     <select class="form-select" id="driver" required>
                         <option value="" hidden>Pilih Tipe Driver</option>
@@ -87,26 +87,28 @@
                         <option value="false">Tanpa Supir(Lepas Kunci)</option>
                     </select>
                 </div>
-                <div class="col-xxl p-2 mx-auto inputDate">
+                <div class="col-lg col-md-6 col-sm-6 col-xs-12 p-2 inputDate">
                     <label class="pb-2">Tanggal</label>
                     <input type="date" id="date" class="form-control" required />
                 </div>
-                <div class="col-xxl p-2 mx-auto inputTime">
+                <div class="col-lg col-md-6 col-sm-6 col-xs-12 p-2 inputTime">
                     <label class="pb-2">Waktu Jemput/Ambil</label>
-                    <input type="time" id="time" class="form-control"required />
+                    <input type="time" id="time" class="form-control" required />
                 </div>
-                <div class="col-xxl p-2 mx-auto inputPassanger" style="min-width: 200px">
+                <div class="col-lg col-md-6 col-sm-6 col-xs-12 p-2 inputPassanger" style="min-width: 200px">
                     <label class="pb-2">Jumlah Penumpang</label>
                     <input type="number" class="form-control" id="passanger" placeholder="Jumlah Penumpang" />
                 </div>
-                <div class="col-xl p-2" style="display: inline-block; align-self: flex-end; height: 100%">
+                <div class="col-lg p-2" style="display: inline-block; align-self: flex-end; height: 100%">
                     <button class="btn btn-success" type="button" id="load-btn">Cari Mobil</button>
                 </div>
             </div>
 
             <!-- Daftar Mobil Tersedia -->
-            <div class="row row-cols-auto justify-content-center" id="cars-container">
-                <!-- Data JSON -->
+            <div class="container-lg">
+                <div class="row row-cols-auto justify-content-center" id="cars-container">
+                    <!-- Data JSON -->
+                </div>
             </div>
         </section>
 

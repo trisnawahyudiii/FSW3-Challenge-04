@@ -103,6 +103,10 @@ p {
     border-radius: 4px;
 }
 
+.accordion-item:not(:first-of-type) {
+    border-top: 1px solid #d4d4d4;
+}
+
 .navigation li {
     list-style: none;
 }
@@ -272,6 +276,10 @@ p {
         max-width: 50%;
     }
 
+    .why-us--header {
+        text-align: center;
+    }
+
     .mycard {
         width: 100% !important;
     }
@@ -321,7 +329,7 @@ p {
     }
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
     .navbar-container {
         padding: 0 5rem;
     }
@@ -339,4 +347,26 @@ p {
     .hero-ills {
         max-width: 50%;
     }
+
+    .inputTime,
+    .inputDate {
+        width: 200px;
+    }
+
+    .inputPassanger,
+    .inputDriver {
+        width: 200px;
+    }
 }
+
+/* @media screen and (min-width: 1440px) {
+    .inputTime,
+    .inputDate {
+        width: 225px;
+    }
+
+    .inputPassanger,
+    .inputDriver {
+        width: 225px;
+    }
+} */

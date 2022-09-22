@@ -26,7 +26,7 @@ class Car {
     render() {
         const rentCost = rupiah(this.rentPerDay);
         return `
-            <div class="col-md-3 col-sm-12 m-2">
+            <div class="col=lg-4 col-md-4 col-sm-12 m-2">
                 <div class="card" style="width: 18rem">
                     <img src="${this.image}" class="card-img-top img-fluid" alt="${this.manufacture}" style="height: 190px; object-fit: cover" />
                     <div class="card-body" style="font-size: 14px">
